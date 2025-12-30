@@ -11,17 +11,19 @@ public class Main {
                 width = scanner.nextInt();
                 elements[0] = scanner.nextInt();
 
+                elements = sortElements(width,elements);
+                printElements(elements);
         }
     }
-    public int[] SortedElements (int width, int[] elements) {
+    public static int[] sortElements (int width, int[] elements) {
         int [] sortedElements = new int [300];
         for (int i =0, j =elements.length -1;i < width;i++, j--) {
             sortedElements[(i<elements.length/2-2) ? elements[i] : elements.length-1] = elements[i];
             sortedElements[(j>elements.length/2-2) ? elements[j] : elements.length-1] = elements[j];
-
         }
-
         return sortedElements;
-
+    }
+    public static void printElements (int[] elements) {
+        Arrays.stream(elements).forEach(e -> System.out.print((e.)));
     }
 }

@@ -12,7 +12,7 @@ public class Main {
                 elements[0] = scanner.nextInt();
 
                 elements = sortElements(width,elements);
-                printElements(elements);
+                printElements(elements, width);
         }
     }
     public static int[] sortElements (int width, int[] elements) {
@@ -23,7 +23,7 @@ public class Main {
         }
         return sortedElements;
     }
-    public static void printElements (int[] elements) {
-        Arrays.stream(elements).forEach(e -> System.out.print((e.)));
+    public static void printElements (int[] elements, int width) {
+        Arrays.stream(elements).limit(width).forEach(e -> System.out.print(e + " "));
     }
 }

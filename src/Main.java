@@ -7,12 +7,12 @@ public class Main {
         int width = 0;
         int [] elements = new int[300];
         int insertions = scanner.nextInt();
-             for (int i =0; i< insertions;i++){
+             while (insertions == 0){
                 width = scanner.nextInt();
                 elements[0] = scanner.nextInt();
-
                 elements = sortElements(width,elements);
                 printElements(elements, width);
+                insertions--;
         }
     }
     public static int[] sortElements (int width, int[] elements) {

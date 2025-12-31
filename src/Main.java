@@ -7,23 +7,16 @@ public class Main {
         int width = 0;
         int [] elements = new int[300];
         int insertions = scanner.nextInt();
-             while (insertions == 0){
+             while (insertions-- > 0){
                 width = scanner.nextInt();
-                elements[0] = scanner.nextInt();
-                elements = sortElements(width,elements);
-                printElements(elements, width);
-                insertions--;
+                for (int i = 0; i<width; i++) {
+                elements[i] = scanner.nextInt();
+                }
+                for (int j = 0; j < width; j++) {
+                    int index = (j % 2 == 0) ? j / 2 : width - 1 - j / 2;
+                    System.out.print(elements[index] + " ");
+                }
+                System.out.println();
         }
-    }
-    public static int[] sortElements (int width, int[] elements) {
-        int [] sortedElements = new int [300];
-        for (int i =0, j =elements.length -1;i < width;i++, j--) {
-            sortedElements[(i<elements.length/2-2) ? elements[i] : elements.length-1] = elements[i];
-            sortedElements[(j>elements.length/2-2) ? elements[j] : elements.length-1] = elements[j];
-        }
-        return sortedElements;
-    }
-    public static void printElements (int[] elements, int width) {
-        Arrays.stream(elements).limit(width).forEach(e -> System.out.print(e + " "));
     }
 }
